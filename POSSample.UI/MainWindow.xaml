@@ -5,8 +5,101 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:POSSample.UI"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="POS" Height="450" Width="800">
     <Grid>
-        
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <Grid 
+            Grid.Column="0" 
+            Margin="10 10 10 10">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="5*"/>
+                <RowDefinition Height="90*"/>
+            </Grid.RowDefinitions>
+
+            <Grid Grid.Row="0">
+                <StackPanel 
+                    Orientation="Horizontal">
+
+                    <TextBox 
+                    Text="{Binding SearchKeyword, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                     MinWidth="150"
+                   />
+
+
+                    <Button 
+                        Content="X"
+                        Command="{Binding ClearSearchCommand}"
+                        Margin="10 0"/>
+
+                    <Button 
+                        Content="Search"
+                        Command="{Binding SearchCommand}"/>
+
+                </StackPanel>
+
+                
+            </Grid>
+            <Grid Grid.Row="1" >
+                <ListView
+                    ItemsSource="{Binding Customers}"
+                    DisplayMemberPath="Name"
+                    SelectedItem="{Binding SelectedCustomer, Mode=TwoWay}">
+                    
+                </ListView>
+            </Grid>
+
+
+        </Grid>
+        <Grid Grid.Column="1" >
+            <StackPanel 
+                Orientation="Vertical"
+                Margin="10">
+                <TextBox Margin="10" Text="{Binding  SelectedCustomer.Name,UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" Padding="10"></TextBox>
+                <TextBox Margin="10" Text="{Binding  SelectedCustomer.Phone,UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" Padding="10"></TextBox>
+                <TextBox Margin="10" Text="{Binding  SelectedCustomer.Email,UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" Padding="10"></TextBox>
+                <TextBox Margin="10" Text="{Binding  SelectedCustomer.TIN,UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" Padding="10"></TextBox>
+                
+                <StackPanel 
+                    Orientation="Horizontal">
+                    <Button
+                        Command="{Binding UpdateCommand}"
+                        Content="update"
+                        Padding="10"
+                        Margin="20 0">                        
+                    </Button>
+                    <Button
+                        Command="{Binding DeleteCommand}"
+                        Content="Delete"
+                        Padding="10"
+                        Margin="20 0" >                        
+                    </Button>
+                </StackPanel>
+            </StackPanel>
+
+        </Grid>
+        <Grid Grid.Column="2" >
+            <StackPanel 
+                Orientation="Vertical"
+                Margin="10">
+                <TextBox Margin="10" Text="{Binding  NewCustomer.Name,UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" Padding="10"></TextBox>
+                <TextBox Margin="10" Text="{Binding  NewCustomer.Phone,UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" Padding="10"></TextBox>
+                <TextBox Margin="10" Text="{Binding  NewCustomer.Email,UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" Padding="10"></TextBox>
+                <TextBox Margin="10" Text="{Binding  NewCustomer.TIN,UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" Padding="10"></TextBox>
+
+                <Button
+                        Command="{Binding AddCommand}"
+                        Content="Add"
+                        Padding="10"
+                        Margin="20 0">
+                </Button>
+            </StackPanel>
+        </Grid>
+
+
     </Grid>
 </Window>

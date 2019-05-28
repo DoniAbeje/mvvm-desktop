@@ -5,6 +5,10 @@ VisualStudioVersion = 15.0.28307.489
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "POSSample.UI", "POSSample.UI\POSSample.UI.csproj", "{9E6C2125-CFBC-4B2B-8FEC-85C7C930151D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "POSSample.DataAccess", "POSSample.DataAccess\POSSample.DataAccess.csproj", "{BD8232DA-20A1-49A5-B428-763677C1FDE3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "POSSample.Model", "POSSample.Model\POSSample.Model.csproj", "{D1B80D5F-5DCF-4A3A-AF16-998D8EF0007E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +19,14 @@ Global
 		{9E6C2125-CFBC-4B2B-8FEC-85C7C930151D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9E6C2125-CFBC-4B2B-8FEC-85C7C930151D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9E6C2125-CFBC-4B2B-8FEC-85C7C930151D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BD8232DA-20A1-49A5-B428-763677C1FDE3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BD8232DA-20A1-49A5-B428-763677C1FDE3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BD8232DA-20A1-49A5-B428-763677C1FDE3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BD8232DA-20A1-49A5-B428-763677C1FDE3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D1B80D5F-5DCF-4A3A-AF16-998D8EF0007E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D1B80D5F-5DCF-4A3A-AF16-998D8EF0007E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D1B80D5F-5DCF-4A3A-AF16-998D8EF0007E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D1B80D5F-5DCF-4A3A-AF16-998D8EF0007E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

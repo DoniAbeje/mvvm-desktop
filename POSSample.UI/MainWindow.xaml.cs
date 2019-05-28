@@ -1,4 +1,5 @@
-﻿using System;
+﻿using POSSample.UI.ViewModel;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,9 +21,20 @@ namespace POSSample.UI
     /// </summary>
     public partial class MainWindow : Window
     {
-        public MainWindow()
+        private CustomerViewModel _viewModel;
+
+        public MainWindow(CustomerViewModel customerViewModel)
         {
             InitializeComponent();
+            _viewModel = customerViewModel;
+            DataContext = _viewModel;
+            Loaded += MainWindow_Loaded;
+
+        }
+
+        private async void MainWindow_Loaded(object sender, RoutedEventArgs e)
+        {
+            await _viewModel.LoadAsync();
         }
     }
 }
